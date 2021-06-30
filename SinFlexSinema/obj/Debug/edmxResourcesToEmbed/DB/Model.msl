@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SinFlexSinemaModelStoreContainer" CdmEntityContainer="SinFlexSinemaEntities1">
+    <EntitySetMapping Name="Bilets">
+      <EntityTypeMapping TypeName="SinFlexSinemaModel.Bilet">
+        <MappingFragment StoreEntitySet="Bilet">
+          <ScalarProperty Name="Bilet_ID" ColumnName="Bilet_ID" />
+          <ScalarProperty Name="Film_ID" ColumnName="Film_ID" />
+          <ScalarProperty Name="Salon_ID" ColumnName="Salon_ID" />
+          <ScalarProperty Name="KoltukNumarasi" ColumnName="KoltukNumarasi" />
+          <ScalarProperty Name="Satis_ID" ColumnName="Satis_ID" />
+          <ScalarProperty Name="Musteri_ID" ColumnName="Musteri_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departmen">
+      <EntityTypeMapping TypeName="SinFlexSinemaModel.Departman">
+        <MappingFragment StoreEntitySet="Departman">
+          <ScalarProperty Name="Departman_ID" ColumnName="Departman_ID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Films">
+      <EntityTypeMapping TypeName="SinFlexSinemaModel.Film">
+        <MappingFragment StoreEntitySet="Film">
+          <ScalarProperty Name="Film_ID" ColumnName="Film_ID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Sure" ColumnName="Sure" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+          <ScalarProperty Name="YerliMi" ColumnName="YerliMi" />
+          <ScalarProperty Name="FilmTur_ID" ColumnName="FilmTur_ID" />
+          <ScalarProperty Name="SatisDevamEdiyoMu" ColumnName="SatisDevamEdiyoMu" />
+          <ScalarProperty Name="StokDurumu" ColumnName="StokDurumu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FilmTurs">
+      <EntityTypeMapping TypeName="SinFlexSinemaModel.FilmTur">
+        <MappingFragment StoreEntitySet="FilmTur">
+          <ScalarProperty Name="FilmTur_ID" ColumnName="FilmTur_ID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kampanyas">
+      <EntityTypeMapping TypeName="SinFlexSinemaModel.Kampanya">
+        <MappingFragment StoreEntitySet="Kampanya">
+          <ScalarProperty Name="Kampanya_ID" ColumnName="Kampanya_ID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Orani" ColumnName="Orani" />
+          <ScalarProperty Name="VİPMi" ColumnName="VİPMi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rezervasyons">
+      <EntityTypeMapping TypeName="SinFlexSinemaModel.Rezervasyon">
+        <MappingFragment StoreEntitySet="Rezervasyon">
+          <ScalarProperty Name="Rezervasyon_ID" ColumnName="Rezervasyon_ID" />
+          <ScalarProperty Name="Salon_ID" ColumnName="Salon_ID" />
+          <ScalarProperty Name="Seans_ID" ColumnName="Seans_ID" />
+          <ScalarProperty Name="RezervasyonNo" ColumnName="RezervasyonNo" />
+          <ScalarProperty Name="Durumu" ColumnName="Durumu" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Salons">
+      <EntityTypeMapping TypeName="SinFlexSinemaModel.Salon">
+        <MappingFragment StoreEntitySet="Salon">
+          <ScalarProperty Name="Salon_ID" ColumnName="Salon_ID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Kapasite" ColumnName="Kapasite" />
+          <ScalarProperty Name="SiraSayisi" ColumnName="SiraSayisi" />
+          <ScalarProperty Name="Seans_ID" ColumnName="Seans_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Satis">
+      <EntityTypeMapping TypeName="SinFlexSinemaModel.Sati">
+        <MappingFragment StoreEntitySet="Satis">
+          <ScalarProperty Name="Satis_ID" ColumnName="Satis_ID" />
+          <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+          <ScalarProperty Name="Fiyat" ColumnName="Fiyat" />
+          <ScalarProperty Name="SatisTur_ID" ColumnName="SatisTur_ID" />
+          <ScalarProperty Name="İndirim" ColumnName="İndirim" />
+          <ScalarProperty Name="Kampanya_ID" ColumnName="Kampanya_ID" />
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SatisTurs">
+      <EntityTypeMapping TypeName="SinFlexSinemaModel.SatisTur">
+        <MappingFragment StoreEntitySet="SatisTur">
+          <ScalarProperty Name="SatisTur_ID" ColumnName="SatisTur_ID" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Seans">
+      <EntityTypeMapping TypeName="SinFlexSinemaModel.Sean">
+        <MappingFragment StoreEntitySet="Seans">
+          <ScalarProperty Name="Seans_ID" ColumnName="Seans_ID" />
+          <ScalarProperty Name="Seans_Baslama_Saati" ColumnName="Seans_Baslama_Saati" />
+          <ScalarProperty Name="Seans_Bitis_Saati" ColumnName="Seans_Bitis_Saati" />
+          <ScalarProperty Name="Film_ID" ColumnName="Film_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="SinFlexSinemaModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="SinFlexSinemaModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+          <ScalarProperty Name="KullaniciAdi" ColumnName="KullaniciAdi" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="Aciklama" ColumnName="Aciklama" />
+          <ScalarProperty Name="Yas" ColumnName="Yas" />
+          <ScalarProperty Name="Cinsiyet" ColumnName="Cinsiyet" />
+          <ScalarProperty Name="Meslek" ColumnName="Meslek" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="Soyadi" ColumnName="Soyadi" />
+          <ScalarProperty Name="DogumTarihi" ColumnName="DogumTarihi" />
+          <ScalarProperty Name="TcKimlikNo" ColumnName="TcKimlikNo" />
+          <ScalarProperty Name="KayitTarihi" ColumnName="KayitTarihi" />
+          <ScalarProperty Name="UserTypeId" ColumnName="UserTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserTypes">
+      <EntityTypeMapping TypeName="SinFlexSinemaModel.UserType">
+        <MappingFragment StoreEntitySet="UserType">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

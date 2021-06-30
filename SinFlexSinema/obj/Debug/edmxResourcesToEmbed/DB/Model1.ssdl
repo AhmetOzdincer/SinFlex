@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SinFlexSinemaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bilet">
+    <Key>
+      <PropertyRef Name="Bilet_ID" />
+    </Key>
+    <Property Name="Bilet_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Film_ID" Type="int" Nullable="false" />
+    <Property Name="Salon_ID" Type="int" Nullable="false" />
+    <Property Name="KoltukNumarasi" Type="tinyint" Nullable="false" />
+    <Property Name="Satis_ID" Type="int" Nullable="false" />
+    <Property Name="Musteri_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Departman">
+    <Key>
+      <PropertyRef Name="Departman_ID" />
+    </Key>
+    <Property Name="Departman_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Film">
+    <Key>
+      <PropertyRef Name="Film_ID" />
+    </Key>
+    <Property Name="Film_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sure" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Fiyat" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="YerliMi" Type="bit" Nullable="false" />
+    <Property Name="FilmTur_ID" Type="int" Nullable="false" />
+    <Property Name="SatisDevamEdiyoMu" Type="bit" Nullable="false" />
+    <Property Name="StokDurumu" Type="int" />
+  </EntityType>
+  <EntityType Name="FilmTur">
+    <Key>
+      <PropertyRef Name="FilmTur_ID" />
+    </Key>
+    <Property Name="FilmTur_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Kampanya">
+    <Key>
+      <PropertyRef Name="Kampanya_ID" />
+    </Key>
+    <Property Name="Kampanya_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Orani" Type="real" Nullable="false" />
+    <Property Name="VİPMi" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Rezervasyon">
+    <Key>
+      <PropertyRef Name="Rezervasyon_ID" />
+    </Key>
+    <Property Name="Rezervasyon_ID" Type="int" Nullable="false" />
+    <Property Name="Salon_ID" Type="int" Nullable="false" />
+    <Property Name="Seans_ID" Type="int" Nullable="false" />
+    <Property Name="RezervasyonNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Durumu" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Fiyat" Type="money" />
+  </EntityType>
+  <EntityType Name="Salon">
+    <Key>
+      <PropertyRef Name="Salon_ID" />
+    </Key>
+    <Property Name="Salon_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Kapasite" Type="tinyint" Nullable="false" />
+    <Property Name="SiraSayisi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Seans_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Satis">
+    <Key>
+      <PropertyRef Name="Satis_ID" />
+    </Key>
+    <Property Name="Satis_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tarih" Type="date" Nullable="false" />
+    <Property Name="Fiyat" Type="money" Nullable="false" />
+    <Property Name="SatisTur_ID" Type="int" Nullable="false" />
+    <Property Name="İndirim" Type="real" Nullable="false" />
+    <Property Name="Kampanya_ID" Type="int" Nullable="false" />
+    <Property Name="User_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SatisTur">
+    <Key>
+      <PropertyRef Name="SatisTur_ID" />
+    </Key>
+    <Property Name="SatisTur_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Adi" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Seans">
+    <Key>
+      <PropertyRef Name="Seans_ID" />
+    </Key>
+    <Property Name="Seans_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Seans_Baslama_Saati" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Seans_Bitis_Saati" Type="time" Precision="7" Nullable="false" />
+    <Property Name="Film_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullaniciAdi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sifre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Aciklama" Type="nchar" MaxLength="10" />
+    <Property Name="Yas" Type="tinyint" />
+    <Property Name="Cinsiyet" Type="bit" />
+    <Property Name="Meslek" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Soyadi" Type="nvarchar" MaxLength="50" />
+    <Property Name="DogumTarihi" Type="date" />
+    <Property Name="TcKimlikNo" Type="char" MaxLength="11" />
+    <Property Name="KayitTarihi" Type="date" />
+    <Property Name="UserTypeId" Type="int" />
+  </EntityType>
+  <EntityType Name="UserType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Bilet_Film">
+    <End Role="Film" Type="Self.Film" Multiplicity="1" />
+    <End Role="Bilet" Type="Self.Bilet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Film">
+        <PropertyRef Name="Film_ID" />
+      </Principal>
+      <Dependent Role="Bilet">
+        <PropertyRef Name="Film_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bilet_Salon">
+    <End Role="Salon" Type="Self.Salon" Multiplicity="1" />
+    <End Role="Bilet" Type="Self.Bilet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Salon">
+        <PropertyRef Name="Salon_ID" />
+      </Principal>
+      <Dependent Role="Bilet">
+        <PropertyRef Name="Salon_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bilet_Satis">
+    <End Role="Satis" Type="Self.Satis" Multiplicity="1" />
+    <End Role="Bilet" Type="Self.Bilet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Satis">
+        <PropertyRef Name="Satis_ID" />
+      </Principal>
+      <Dependent Role="Bilet">
+        <PropertyRef Name="Satis_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Film_FilmTur">
+    <End Role="FilmTur" Type="Self.FilmTur" Multiplicity="1" />
+    <End Role="Film" Type="Self.Film" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FilmTur">
+        <PropertyRef Name="FilmTur_ID" />
+      </Principal>
+      <Dependent Role="Film">
+        <PropertyRef Name="FilmTur_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rezervasyon_Salon">
+    <End Role="Salon" Type="Self.Salon" Multiplicity="1" />
+    <End Role="Rezervasyon" Type="Self.Rezervasyon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Salon">
+        <PropertyRef Name="Salon_ID" />
+      </Principal>
+      <Dependent Role="Rezervasyon">
+        <PropertyRef Name="Salon_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Rezervasyon_Seans">
+    <End Role="Seans" Type="Self.Seans" Multiplicity="1" />
+    <End Role="Rezervasyon" Type="Self.Rezervasyon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Seans">
+        <PropertyRef Name="Seans_ID" />
+      </Principal>
+      <Dependent Role="Rezervasyon">
+        <PropertyRef Name="Seans_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Salon_Seans">
+    <End Role="Seans" Type="Self.Seans" Multiplicity="1" />
+    <End Role="Salon" Type="Self.Salon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Seans">
+        <PropertyRef Name="Seans_ID" />
+      </Principal>
+      <Dependent Role="Salon">
+        <PropertyRef Name="Seans_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Satis_Kampanya">
+    <End Role="Kampanya" Type="Self.Kampanya" Multiplicity="1" />
+    <End Role="Satis" Type="Self.Satis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kampanya">
+        <PropertyRef Name="Kampanya_ID" />
+      </Principal>
+      <Dependent Role="Satis">
+        <PropertyRef Name="Kampanya_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Satis_SatisTur">
+    <End Role="SatisTur" Type="Self.SatisTur" Multiplicity="1" />
+    <End Role="Satis" Type="Self.Satis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SatisTur">
+        <PropertyRef Name="SatisTur_ID" />
+      </Principal>
+      <Dependent Role="Satis">
+        <PropertyRef Name="SatisTur_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Satis_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Satis" Type="Self.Satis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="User_ID" />
+      </Principal>
+      <Dependent Role="Satis">
+        <PropertyRef Name="User_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Seans_Film">
+    <End Role="Film" Type="Self.Film" Multiplicity="1" />
+    <End Role="Seans" Type="Self.Seans" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Film">
+        <PropertyRef Name="Film_ID" />
+      </Principal>
+      <Dependent Role="Seans">
+        <PropertyRef Name="Film_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_UserType">
+    <End Role="UserType" Type="Self.UserType" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="UserTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SinFlexSinemaModelStoreContainer">
+    <EntitySet Name="Bilet" EntityType="Self.Bilet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departman" EntityType="Self.Departman" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Film" EntityType="Self.Film" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FilmTur" EntityType="Self.FilmTur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kampanya" EntityType="Self.Kampanya" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rezervasyon" EntityType="Self.Rezervasyon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Salon" EntityType="Self.Salon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Satis" EntityType="Self.Satis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SatisTur" EntityType="Self.SatisTur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Seans" EntityType="Self.Seans" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserType" EntityType="Self.UserType" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Bilet_Film" Association="Self.FK_Bilet_Film">
+      <End Role="Film" EntitySet="Film" />
+      <End Role="Bilet" EntitySet="Bilet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bilet_Salon" Association="Self.FK_Bilet_Salon">
+      <End Role="Salon" EntitySet="Salon" />
+      <End Role="Bilet" EntitySet="Bilet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bilet_Satis" Association="Self.FK_Bilet_Satis">
+      <End Role="Satis" EntitySet="Satis" />
+      <End Role="Bilet" EntitySet="Bilet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Film_FilmTur" Association="Self.FK_Film_FilmTur">
+      <End Role="FilmTur" EntitySet="FilmTur" />
+      <End Role="Film" EntitySet="Film" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rezervasyon_Salon" Association="Self.FK_Rezervasyon_Salon">
+      <End Role="Salon" EntitySet="Salon" />
+      <End Role="Rezervasyon" EntitySet="Rezervasyon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Rezervasyon_Seans" Association="Self.FK_Rezervasyon_Seans">
+      <End Role="Seans" EntitySet="Seans" />
+      <End Role="Rezervasyon" EntitySet="Rezervasyon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Salon_Seans" Association="Self.FK_Salon_Seans">
+      <End Role="Seans" EntitySet="Seans" />
+      <End Role="Salon" EntitySet="Salon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Satis_Kampanya" Association="Self.FK_Satis_Kampanya">
+      <End Role="Kampanya" EntitySet="Kampanya" />
+      <End Role="Satis" EntitySet="Satis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Satis_SatisTur" Association="Self.FK_Satis_SatisTur">
+      <End Role="SatisTur" EntitySet="SatisTur" />
+      <End Role="Satis" EntitySet="Satis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Satis_User" Association="Self.FK_Satis_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Satis" EntitySet="Satis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Seans_Film" Association="Self.FK_Seans_Film">
+      <End Role="Film" EntitySet="Film" />
+      <End Role="Seans" EntitySet="Seans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_UserType" Association="Self.FK_User_UserType">
+      <End Role="UserType" EntitySet="UserType" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
