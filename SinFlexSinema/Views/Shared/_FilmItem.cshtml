@@ -1,0 +1,41 @@
+﻿@model SinFlexSinema.DB.Film
+<div class="col-md-3 col-sm-4 col-xs-12">
+    <div class="thumbnail">
+        <div class="carousel-inner">
+            @if (Model.Film_ID <= 2)
+            {
+                if (Model.Film_ID == 1)
+                {
+                    <div class="item active" style="height:338px">
+                        <img src="~/İmages/Anasayfa/Spiderman3.jpg" alt="Los Angeles" style="width:100%;height:100%">
+                    </div>
+                }
+                else if (Model.Film_ID==2)
+                {
+                    <div class="item active">
+                        <img src="~/İmages/Anasayfa/recepivedik5.jpg" alt="Chicago" style="width:100%;height:100%">
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="item active">
+                    <img src="~/İmages/Anasayfa/asksanabenzer.jpg" alt="New york" style="width:100%;height:100%">
+                </div>
+            }
+        </div>
+            @*<img src="http://placehold.it/300x150">*@
+            <div class="caption">
+                <h3>@Model.Adi</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>
+                    <a href="~/Film/SepeteEkle/@Model.Film_ID" class="btn btn-success">
+                        <span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;Sepete Ekle
+                    </a>
+                    <a href="#" data-toggle="modal" data-target="#productinfo" class="btn btn-info">
+                        <span class="glyphicon glyphicon-info-sign"></span>&nbsp;Bilgi
+                    </a>
+                </p>
+            </div>
+        </div>
+</div>

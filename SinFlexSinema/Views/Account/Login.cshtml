@@ -1,0 +1,50 @@
+﻿@model SinFlexSinema.DB.User
+@{
+    ViewBag.Title = "Login";
+}
+<div class="row">
+    @if (Session["LogonUser"] == null)
+    {
+        using (Html.BeginForm())
+        {
+            <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">
+                        <h2>Giriş Formu</h2>
+                        <small style="color:red;">@TempData["Info"]</small>
+                    </div>
+                    <div class="panel-body">
+
+                        <div class="form-group">
+                            <center>
+                                <img src="~/İmages/Anasayfa/depositphotos_472109264-stock-illustration-avatar-with-key-flat-design.jpg" class="img-circle img-responsive" />
+                            </center>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.KullaniciAdi,"Kullanıcı Adı:",new { type="text", })
+                            @Html.TextBoxFor(model => model.KullaniciAdi, new { @class = "form-control",type="text" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Sifre,"Şifre:", new { type="text"})
+                            @Html.TextBoxFor(model => model.Sifre, new { @class = "form-control", type="password" })
+                        </div>
+
+                    </div>
+                    <div class="panel-footer text-right">
+                        <a href="~/Account/SifremiUnuttum" class="btn btn-warning">
+                            <span class="glyphicon glyphicon-asterisk"></span> Şifremi Unuttum
+                        </a>
+                        <button type="submit" class="btn btn-success">
+                            <span class="glyphicon glyphicon-log-in"></span> Giriş Yap
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+
+        }
+    }
+        </div>

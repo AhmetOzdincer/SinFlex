@@ -1,0 +1,62 @@
+﻿    @model SinFlexSinema.DB.User
+@{
+    ViewBag.Title = "Register";
+}
+
+<div class="row">
+    @using (Html.BeginForm())
+    {
+        <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">
+                    <h2>Üye Ol Formu</h2>
+                </div>
+                <div class="panel-body">
+
+                    <div class="form-group">
+                        <center>
+                            <img src="~/İmages/UyeOlSayfasi/uyeolformu.png" class="img-circle img-responsive" />
+                        </center>
+                        <p class="text-danger">@ViewBag.ValidationMessage</p>
+
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Adi,new { @class="text"})
+                        @Html.TextBoxFor(model => model.Adi, new { @class = "form-control", type = "text" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Soyadi,new { type="text"})
+                        @Html.TextBoxFor(model => model.Soyadi, new { @class = "form-control", type = "text" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email, new {type="email"})
+                        @Html.TextBoxFor(model => model.Email, new { @class = "form-control", type = "email" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model=>model.KullaniciAdi,new { type="text"})
+                        @Html.TextBoxFor(model => model.KullaniciAdi, new { @class = "form-control", type = "text" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Sifre,new { type="password"})
+                        @Html.TextBoxFor(model => model.Sifre, new { @class = "form-control", type = "password" })
+                    </div>
+
+
+
+                </div>
+                <div class="panel-footer text-right">
+                    <button type="submit" class="btn btn-success">
+                        <span class="glyphicon glyphicon-floppy-saved"></span> Üye Ol
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

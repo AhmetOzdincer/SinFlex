@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d07d546f96d54685b44433b3be1c0f95" Name="Diagram1">
+        <EntityTypeShape EntityType="SinFlexSinemaModel.Bilet" Width="1.5" PointX="7.5" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinFlexSinemaModel.Departman" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinFlexSinemaModel.Film" Width="1.5" PointX="5.25" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinFlexSinemaModel.FilmTur" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinFlexSinemaModel.Kampanya" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinFlexSinemaModel.Rezervasyon" Width="1.5" PointX="7.5" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinFlexSinemaModel.Salon" Width="1.5" PointX="5.25" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinFlexSinemaModel.Sati" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinFlexSinemaModel.SatisTur" Width="1.5" PointX="3" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinFlexSinemaModel.Sean" Width="1.5" PointX="3" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinFlexSinemaModel.sysdiagram" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinFlexSinemaModel.User" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SinFlexSinemaModel.UserType" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <AssociationConnector Association="SinFlexSinemaModel.FK_Bilet_Film" ManuallyRouted="false" />
+        <AssociationConnector Association="SinFlexSinemaModel.FK_Bilet_Salon" ManuallyRouted="false" />
+        <AssociationConnector Association="SinFlexSinemaModel.FK_Bilet_Satis" ManuallyRouted="false" />
+        <AssociationConnector Association="SinFlexSinemaModel.FK_Film_FilmTur" ManuallyRouted="false" />
+        <AssociationConnector Association="SinFlexSinemaModel.FK_Seans_Film" ManuallyRouted="false" />
+        <AssociationConnector Association="SinFlexSinemaModel.FK_Satis_Kampanya" ManuallyRouted="false" />
+        <AssociationConnector Association="SinFlexSinemaModel.FK_Rezervasyon_Salon" ManuallyRouted="false" />
+        <AssociationConnector Association="SinFlexSinemaModel.FK_Rezervasyon_Seans" ManuallyRouted="false" />
+        <AssociationConnector Association="SinFlexSinemaModel.FK_Salon_Seans" ManuallyRouted="false" />
+        <AssociationConnector Association="SinFlexSinemaModel.FK_Satis_SatisTur" ManuallyRouted="false" />
+        <AssociationConnector Association="SinFlexSinemaModel.FK_Satis_User" ManuallyRouted="false" />
+        <AssociationConnector Association="SinFlexSinemaModel.FK_User_UserType" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

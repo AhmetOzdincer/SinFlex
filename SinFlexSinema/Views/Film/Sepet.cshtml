@@ -1,0 +1,86 @@
+﻿@model List<SinFlexSinema.Models.Film.BasketModels>
+@{
+    ViewBag.Title = "Sepet";
+}
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Sepetiniz</h3>
+            <hr />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <small style="color:red;">@ViewBag.MyError</small>
+            <table class="table table-condensed table-striped table-hover text-center">
+
+                <thead>
+                    <tr>
+                        <!--th*4>{kolon adı}-->
+                        <th class="text-center">Film Adı</th>
+                        <th class="text-center">Fiyat</th>
+                        <th class="text-center">Adet</th>
+                        <th class="text-center">Tutar</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <!--tr*4>(td>lorem2)+(td>{10.00 ₺})+(td>{1})+(td>button.btn>span.glyphicon)-->
+                    @foreach (SinFlexSinema.Models.Film.BasketModels item in Model)
+                    {
+                    <tr>
+                        <td>@item.Film.Adi</td>
+                        <td>@item.Film.Fiyat</td>
+                        <td>@item.Count</td>
+                        <td>@(item.Film.Fiyat * item.Count)</td>
+                        <td>
+                            <a href="~/Film/SepeteEkle/@item.Film.Film_ID" class="btn btn-warning btn-xs">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </a>
+                            <a href="~/Film/SepeteEkle/@item.Film.Film_ID?remove=true" class="btn btn-info btn-xs">
+                                <span class="glyphicon glyphicon-minus"></span>
+                            </a>
+                            <a href="~/Film/Sepet/@item.Film.Film_ID" class="btn btn-info btn-xs">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                            </a>
+                            <a href="~/Film/SepetSil/@item.Film.Film_ID" class="btn btn-danger btn-xs">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </a>
+                                
+                            
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td>
+                            &nbsp;
+                        </td>
+                        <td class="text-center text-danger">    
+                            <h2>@ViewBag.TotalPrice ₺</h2> <span></span>
+                        </td>
+                        <td colspan="2" class="text-right">
+                            <br />
+                            <a href="~/Film/SepetSil/0" class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-trash"></span> Sepeti Boşalt
+                            </a>
+                            <a href="#" class="btn btn-success btn-sm">
+                                <span class="glyphicon glyphicon-send"></span> Satın Al
+                            </a>
+                        </td>
+                    </tr>
+                </tfoot>
+
+            </table>
+
+        </div>
+    </div>
+
+</div>
+

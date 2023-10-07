@@ -1,0 +1,105 @@
+﻿@model SinFlexSinema.DB.User
+
+@{
+    ViewBag.Title = "Profil";
+}
+
+<h2 style="text-align:center">Profil Sayfası</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserType.Description )
+            
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserType.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KullaniciAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KullaniciAdi)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Yas)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yas)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cinsiyet)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cinsiyet)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Meslek)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Meslek)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Soyadi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soyadi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DogumTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DogumTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TcKimlikNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TcKimlikNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KayitTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KayitTarihi)
+        </dd>
+
+
+
+    </dl>
+</div>
