@@ -1,0 +1,65 @@
+﻿@model SinFlexSinema.DB.User
+
+@{
+    ViewBag.Title = "Profil";
+}
+
+<h2 style="text-align:center">Profil Sayfası</h2>
+<div style="margin-left:100px">
+    <div class="form-group">
+        <label class="col-md-2 text-danger">Açıklama:</label>
+        <label class="col-md-10">@Model.UserType.Description</label>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 text-danger">Kullanıcı Adı:</label>
+        <label class="col-md-10">@Model.KullaniciAdi</label>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 text-danger">Yaş:</label>
+        <label class="col-md-10">@Model.Yas</label>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 text-danger">Cinsiyet:</label>
+        <label class="col-md-10">
+            @if (Model.Cinsiyet.Value.ToString() == "True")
+            {
+                @Html.Label("Erkek")
+            } /**/
+            else
+            {
+                @Html.Label("Kadın")
+            }
+        </label>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 text-danger">Meslek:</label>
+        <label class="col-md-10">@Model.Meslek</label>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 text-danger">E-Mail:</label>
+        <label class="col-md-10">@Model.Email</label>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 text-danger">Adı:</label>
+        <label class="col-md-10">@Model.Adi</label>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 text-danger">Soyadı:</label>
+        <label class="col-md-10">@Model.Soyadi</label>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 text-danger">Doğum Tarihi:</label>
+        <label class="col-md-10">@Model.DogumTarihi.Value.ToShortDateString()</label>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 text-danger">Tc Kimlik No:</label>
+        <label class="col-md-10">@Model.TcKimlikNo</label>
+    </div>
+    <div class="form-group">
+        <label class="col-md-2 text-danger">Kayıt Tarihi:</label>
+        <label class="col-md-10">@Model.KayitTarihi.Value.ToShortDateString()</label>
+    </div>
+</div>

@@ -1,0 +1,113 @@
+﻿@model List<SinFlexSinema.Models.Film.BasketModels>
+@{
+    ViewBag.Title = "Sepet";
+}
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Sepetiniz</h3>
+            @if (TempData["Hata"] != null)
+            {
+                <div class="alert alert-danger">@TempData["Hata"]</div>
+            }
+            @if (Model == null || !Model.Any())
+            {
+                <div class="alert alert-warning">
+                    Sepetinizde film bulunmamaktadır. <a href="@Url.Action("Anasayfa", "Film")">Filmlere göz atın.</a>
+                </div>
+            }
+            else
+            {
+
+            <hr />
+
+    <div class="row">
+        <div class="col-md-12">
+            <small style="color:red;">@ViewBag.MyError</small>
+
+            @using (Html.BeginForm("Satis", "Film"))
+            {
+                <table class="table table-condensed table-striped table-hover text-center">
+                    <thead>
+                        <tr>
+                            <!--th*4>{kolon adı}-->
+                            <th class="text-center">Film Adı</th>
+                            <th class="text-center">Fiyat</th>
+                            <th class="text-center">Adet</th>
+                            <th class="text-center">Tutar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--tr*4>(td>lorem2)+(td>{10.00 ₺})+(td>{1})+(td>button.btn>span.glyphicon)-->
+                        @foreach (SinFlexSinema.Models.Film.BasketModels item in Model)
+                        {
+                        <tr>
+                            <td>@item.Film.Adi</td>
+                            <td>@item.Film.Fiyat</td>
+                            <td>@item.Count</td>
+                            <td>@(item.Film.Fiyat * item.Count)</td>
+                            <td>
+                                <a href="~/Film/SepeteEkle/@item.Film.Film_ID" class="btn btn-warning btn-xs">
+                                    <span class="glyphicon glyphicon-plus"></span>
+                                </a>
+                                <a href="~/Film/SepeteEkle/@item.Film.Film_ID?remove=true" class="btn btn-info btn-xs">
+                                    <span class="glyphicon glyphicon-minus"></span>
+                                </a>
+                                <a href="~/Film/Sepet/@item.Film.Film_ID" class="btn btn-info btn-xs">
+                                    <span class="glyphicon glyphicon-eye-open"></span>
+                                </a>
+                                <a href="~/Film/SepetSil/@item.Film.Film_ID" class="btn btn-danger btn-xs">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </a>
+
+
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        @if (ViewBag.CurrentAddresses != null && ((List<SelectListItem>)ViewBag.CurrentAddresses) != null)
+                        {
+                            <tr>
+                                <td colspan="2">
+                                    @Html.Label("AddressId", "Adres Seçiniz")
+                                </td>
+                                <td colspan="4">
+                                    @Html.DropDownList("Address", (List<SelectListItem>)ViewBag.CurrentAddresses, new { @class = "form-control" })
+                                </td>
+                            </tr>
+                        }
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td class="text-center text-danger" style="float:left">
+                                <h2>Satış Fiyatı:@ViewBag.TotalPrice ₺</h2> <span></span>
+                            </td>
+                            <td colspan="2" class="text-right">
+                                <br />
+                                <a href="~/Film/SepetSil/0" class="btn btn-danger btn-sm">
+                                    <span class="glyphicon glyphicon-trash"></span> Sepeti Boşalt
+                                </a>
+                                <button type="submit" class="btn btn-success btn-sm">
+                                    <span class="glyphicon glyphicon-send"></span> Satın Al
+                                </button>
+                                @*<button type="submit" class="btn btn-success btn-sm">
+            <span class="glyphicon glyphicon-send"></span> Satın Al
+        </button>*@
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            }
+
+        </div>
+    </div>
+            }
+</div>
+
+        </div>
+</div>>

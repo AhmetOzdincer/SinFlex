@@ -1,0 +1,25 @@
+﻿@model List<SinFlexSinema.DB.SatisTur>
+@{
+    ViewBag.Title = "Ödeme Seçenekleri";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .boyut {
+        font-size: 15px;
+    }
+</style>
+<h2>Ödeme Seçenekleri</h2>
+@*<div style="font-size:16px">@Html.RadioButtonFor("Kapıda Ödeme","Kapıda Ödeme") @Html.LabelFor("Kapıda Ödeme","Kapıda Ödeme")</div>*@
+<div class="form-group">
+    @foreach (var item in Model)
+    {
+        @Html.RadioButtonFor(m => item.Adi, "Kredi Kartı")
+        @Html.LabelFor(m => item.Adi, item.Adi, new { @class = "boyut" })
+        <br />
+
+    }
+
+
+</div>
+    <a class="btn btn-success" style="width:160px;height:35px;margin-bottom:20px">Alışverişi Tamamla</a>
+

@@ -1,0 +1,61 @@
+﻿@model List<SinFlexSinema.DB.Sati>
+@{
+    ViewBag.Title = "Ödemeleriniz";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Ödeme Sayfası</h3>
+<h3>@ViewBag.MyError</h3>
+
+<table class="table table-condensed table-striped table-hover text-center">
+    <thead>
+        <tr>
+            <!--th*4>{kolon adı}-->
+            <th class="text-center">Bilet Numarası</th>
+            <th class="text-center">İndirimli Fiyatı</th>
+            <th class="text-center">Tarih</th>
+            <th class="text-center">İndirim</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{ decimal @toplamfiyat = 0; }
+        @foreach (var satis in Model)
+        {
+            <tr>
+
+
+                <td>
+                    @if (satis.Bilets != null && satis.Bilets.Count > 0)
+                    {
+                        <ul class="list-unstyled mb-0">
+                            @foreach (var bilet in satis.Bilets)
+                            {
+                                <li class="p-1 border-bottom border-light">
+                                    🎬 <strong>@(bilet.Film?.Adi ?? "Film Adı Alınamadı")</strong>
+                                    <span class="ms-2 badge bg-secondary">Koltuk: @bilet.KoltukNumarasi</span>
+                                    <small class="text-muted ms-2">(Bilet No: #@bilet.BiletNumarasi)</small>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <span class="text-danger">⚠️ Bu satış kaydına ait bilet bulunamadı.</span>
+                    }
+                </td>
+                <td>@String.Format("{0:0.#####} ₺", @satis.Fiyat)</td>
+                <td>@satis.Tarih.ToString("dd.MM.yyyy")</td>
+                <td>%@satis.İndirim</td>
+
+            </tr>
+            toplamfiyat += @satis.Fiyat;
+        }
+    </tbody>
+
+</table>
+    <tr>
+        <td class="text-center text-danger">
+            <h2 style="margin-left:200px;color:red">Toplam Fiyat:@String.Format("{0:0.#####} ₺", @toplamfiyat)</h2> <span></span>
+        </td>
+    </tr>
+<a href="~/Film/Odeme" type="button" class="btn btn-danger" style="width:100px;margin-left:1040px;margin-top:20px;margin-bottom:20px">Öde</a>
